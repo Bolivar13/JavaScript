@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // on demande à l'utilisateur de saisir des nombres
+        // jusqu'à ce qu'il saisisse -1.
+        // on affiche apré la somme des nombres saisis.
+        let somme = 0;
+        let n;
+        do {
+            n = parseInt(prompt('Saisir un nombre'))
+            console.log(n)
+            if(n!== -1){
+                somme += n
+            }
+        } while (n !== -1);
+
+        document.write(somme)
+    </script>
+</body>
+</html>

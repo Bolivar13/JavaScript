@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1- fonction sans arguments
+        function f1(){
+            // code de la fonction
+        }
+        //2- fonction avec plusieurs arguments
+        function f2(a,b){
+            return a+b
+        }
+
+        // 3- fonction avec des arguments optionnels
+        // régles : tous les arguments sont optionnels
+        function f3(a,b){
+            console.log(a,b)
+        }
+        f3(2) // a=2, b=undefined
+        f3(1,2,3) // a=1, b=2
+        f3() // a=undefined, b=undefined
+
+        // 4- argument avec valeur par défaut
+        function f4(a,b=0,c){
+            console.log('f4', a,b,c)
+        }
+        f4() // a=undefined, b=0, c=undefined
+        f4(2) // a=2, b=0, c=undefined
+        f4(2,4) // a=2, b=4, c=undefined
+        f4(2,4,5) // a=2, b=4, c=5
+
+        // 5-fonction avec nombre d'argumets variable
+        // rêgle : 
+        function somme(){
+            let s = 0;
+            for(let arg of arguments){
+                s += arg
+            }
+            return s
+        }
+        let s = somme(10,23,54,10,10,10)
+        console.log(s)
+
+        // exercice :
+        // définir une fonction max qui retourn le plus
+        // grand nombre des arguments passé en paramêtres.
+        function max(){
+            if(arguments.length == 0)
+                return;
+            
+            let max = arguments[0];
+            for(let arg of arguments){
+                max = (arg > max)? arg:max;
+            }
+            return max;
+            
+        }
+        let m1 = max(10,5,200,40) // 200
+        let m2 = max() // undefined
+        console.log(m1,m2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Telephone(marque, serie, couleur, stock){
+            this.marque = marque;
+            this.serie = serie;
+            this.couleur = couleur;
+            this.stock = stock;
+            this.estDisponible = () => this.stock > 0;
+        }
+        const telephone1 = new Telephone('Samsung','A73','noir',20);
+        const telephone2 = new Telephone('Nokia','3310','bleu',10);
+
+        console.log(telephone2.marque)
+        console.log(telephone2.estDisponible())
+    </script>
+</body>
+</html>

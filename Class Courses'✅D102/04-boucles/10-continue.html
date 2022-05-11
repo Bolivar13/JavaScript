@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [1,-10,-20,30,20];
+        const q = 34
+        // en utilisant continue, nous souhaitons calculer la somme des nombres 
+        // positifs et leur produit
+        let somme = 0;
+        let produit = 1;
+        for (n of numbers){
+            if(n < 0) continue; // passe au prochain element
+            // ces lignes ne seront pas executées
+            // si n est négatif
+            somme += n;
+            produit *= n;
+        }
+        document.write(somme + ' ' + produit)
+    </script>
+</body>
+</html>

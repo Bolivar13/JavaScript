@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <script>
+        function somme(a, b, callback) {
+            let s = a + b;
+            callback(s)
+        }
+
+        // Tritement somme de 10 et 12 puis afficher sur la console.
+        somme(10, 12, x => console.log(x))
+        //Taitement somme de 10 et 12 puis écrire dans une div
+        somme(10, 12, x => {
+            document.querySelector('#d1').innerHTML = x
+        })
+
+    </script>
+</body>
+
+</html>

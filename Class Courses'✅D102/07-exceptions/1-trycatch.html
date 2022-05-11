@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="n">
+    <span id="message"></span>
+    <button onclick="validerNumber()">Valider</button>
+    <script>
+        function getNumber(){
+            let n = document.querySelector('#n').value
+            if(isNaN(n)){
+                throw Error('Il faut saisir un nombre valide')
+            }
+            return Number(n)
+        }
+        
+        function validerNumber(){
+            try {
+                document.querySelector('#message').innerHTML = ""
+                n = getNumber()
+            } catch (error) {
+                document.querySelector('#message').innerHTML = error.message
+                document.querySelector('#n').value = ""
+            }
+        }
+    </script>
+</body>
+</html>

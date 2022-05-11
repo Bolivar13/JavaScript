@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Telephone(marque, serie, couleur, stock){
+            this.marque = marque;
+            this.serie = serie;
+            this.couleur = couleur;
+            this.stock = stock;
+            this.estDisponible = () => this.stock > 0;
+        }
+        const tel = new Telephone('Samsung','A73','noir',20);
+        // copier uniquement la réference de l'objet tel.
+        // lorsqu'on change dans tel_copy , on aussi entrain 
+        // de changer dans tel 
+        // parce que tel et tel_copy font réference aux mème attributs.
+        const tel_copy = tel;
+        tel_copy.stock = 100;
+        console.log(tel_copy.stock, tel.stock)
+
+        // copier le contenue de tel dans une nouvelle variable tel_copy2
+        // tel et tel_copy2 sont complementent indépendantes
+        const tel_copy2 = {...tel}
+        tel_copy2.stock = 2000;
+        console.log(tel_copy2.stock, tel.stock)
+    </script>
+</body>
+</html>

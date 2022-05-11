@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function max(){
+            if(arguments.length <= 1)
+                return;
+            let comparateur = arguments[0]
+            let max = arguments[1];
+            for(let arg of arguments){
+                max = (comparateur(arg,max))? arg:max;
+            }
+            return max;
+            
+        }
+
+        let m1 = max(
+            (a,b) => a > b,
+            1,
+            33,
+            5,
+            3
+        ) // 33
+        console.log(m1);
+        let m2 = max(
+            (a,b) => a.prix > b.prix,
+            {titre:"P1",prix:10},
+            {titre:"P2",prix:103},
+            {titre:"P3",prix:210},
+            {titre:"P4",prix:150},
+            {titre:"P5",prix:100},
+        )
+        // {titre:"P3",prix:210}
+        console.log(m2)
+    </script>
+</body>
+</html>

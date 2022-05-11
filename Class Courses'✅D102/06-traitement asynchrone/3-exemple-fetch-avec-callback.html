@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <script>
+        function loadData(url, callback){
+            fetch(url)
+            .then(response => response.json())
+            .then(json => callback(json) )
+        }
+        
+        const displayCountUsers = data => {
+            console.log('chargement users fini')
+            document.querySelector('#d1').innerHTML = `
+                nombre utilisateurs est ${data.length}
+            `
+        }
+        const displayCountPhotos = data => {
+            console.log('chargement photos fini')
+            document.querySelector('#d2').innerHTML = `
+                nombre photos est ${data.length}
+            `
+        }
+
+        loadData(
+            'https://jsonpssjsjslaceholder.typicode.com/photos',
+            displayCountPhotos
+        )
+        loadData(
+            'https://jsonplaceholder.typicode.com/users',
+            displayCountUsers
+        )
+
+    </script>
+</body>
+
+</html>

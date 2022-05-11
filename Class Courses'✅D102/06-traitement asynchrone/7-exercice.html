@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="completed">completed: 20</div>
+    <div id="not_completed">not completed: 60</div>
+    <script>
+    // Compter le nombres des todo complétées et celle non complétées.
+    fetch("./todos.json")
+    .then(response => response.json())
+    .then(json => {
+        let nbCompleted = 0;
+        let nbNotCompleted = 0;
+        json.forEach(todo => {
+            if(todo.completed) nbCompleted ++;
+            else nbNotCompleted ++;
+        });
+        console.log(nbCompleted, nbNotCompleted);
+        document.querySelector('#completed').innerHTML = `
+            completed: ${nbCompleted}
+        `
+        document.querySelector('#not_completed').innerHTML = `
+            not completed: ${nbNotCompleted}
+        `
+    })
+
+    </script>
+</body>
+
+</html>
