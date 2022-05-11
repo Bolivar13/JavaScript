@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NB</title>
+</head>
+<body>
+    <input type="number" id="gere_nb"> <br>
+    <button onclick="gere_nb()">Sub</button>
+    <span id="affiche"></span>
+
+
+     <script>
+         let b =  Math.floor(Math.random()*100)
+         function gere_nb(n) {
+            let n = Number(document.querySelector("#gere_nb").value)
+
+        if ( n == b) {
+            document.querySelector('#affiche').innerHTML = 'True';
+         }
+        else if (n > b) {
+            document.querySelector('#affiche').innerHTML = 'Plus petit';
+        }
+        else {
+            document.querySelector('#affiche').innerHTML = 'Plus Grand';
+
+        }
+         }
+
+         
+     </script>
+</body>
+</html>

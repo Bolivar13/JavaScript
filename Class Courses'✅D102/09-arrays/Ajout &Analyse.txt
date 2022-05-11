@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 6</title>
+</head>
+<body>
+    <label for="note">Note :</label><br>
+    <input type="number" id="note"> <button onclick="ajouter()">ajouter</button> 
+    <button onclick="analyse()">analyse</button>
+</body>
+
+<script>
+    n = new Array();
+    function ajouter(){
+        let note = document.querySelector('#note').value;
+        n.push(note);
+        console.log(n);
+    }
+    const analyse = () => {
+        const filtered = n.filter(p => p >= 0 && p <= 20);
+        console.log(filtered.length)
+
+        const filtered1 = n.filter(p => p < 0 || p > 20);
+        console.log(filtered1.length)
+
+        const sum = filtered.reduce((total,p) => Number(total) + Number(p))
+        console.log(sum);
+
+        const sum1 = filtered.reduce((total,p) => Number(total) + Number(p))
+        console.log(sum1 / filtered.length);
+
+        g = filtered.sort();
+        g.reverse();
+        console.log(g[0]);
+
+        g = filtered.sort();
+        console.log(g[0]);
+
+
+    }
+
+    
+
+</script>
+</html>
